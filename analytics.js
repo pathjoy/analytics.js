@@ -104,16 +104,17 @@ var Analytics = require('./analytics');
 var each = require('each');
 
 /**
+ * Expose the `analytics` singleton.
+ */
+
+var analytics = module.exports = exports = new Analytics();
+
+/**
  * Load integration options
  */
 
  analytics.initialize(window.analyticsOptions || {});
 
-/**
- * Expose the `analytics` singleton.
- */
-
-var analytics = module.exports = exports = new Analytics();
 
 /**
  * Expose require
