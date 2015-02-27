@@ -98,7 +98,7 @@
  * (C) 2013 Segment.io Inc.
  */
 
-var _analytics = window.analytics;
+var analyticsq = window.analytics || [];
 var Integrations = require('analytics.js-integrations');
 var Analytics = require('./analytics');
 var each = require('each');
@@ -133,7 +133,13 @@ each(Integrations, function (name, Integration) {
  * Load integrations with options
  */
 
- analytics.initialize(window.analyticsOptions || {});
+analytics.initialize(window.analyticsOptions || {});
+
+while (analyticsq && analyticsq.length > 0) {
+  var args = analyticsq.shift();
+  var method = args.shift();
+  if (analytics[method]) analytics[method].apply(analytics, args);
+}
 
 }, {"analytics.js-integrations":2,"./analytics":3,"each":4,"../bower.json":5}],
 2: [function(require, module, exports) {
