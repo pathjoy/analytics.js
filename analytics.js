@@ -110,13 +110,6 @@ var each = require('each');
 var analytics = module.exports = exports = new Analytics();
 
 /**
- * Load integration options
- */
-
- analytics.initialize(window.analyticsOptions || {});
-
-
-/**
  * Expose require
  */
 
@@ -135,6 +128,12 @@ exports.VERSION = require('../bower.json').version;
 each(Integrations, function (name, Integration) {
   analytics.use(Integration);
 });
+
+/**
+ * Load integrations with options
+ */
+
+ analytics.initialize(window.analyticsOptions || {});
 
 }, {"analytics.js-integrations":2,"./analytics":3,"each":4,"../bower.json":5}],
 2: [function(require, module, exports) {
