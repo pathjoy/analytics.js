@@ -7240,9 +7240,6 @@ function Analytics () {
   var self = this;
   this.on('initialize', function(settings, options){
     if (options.initialPageview) self.page();
-  });
-
-  this.on('initialize', function(){
     self._parseQuery();
   });
 }
@@ -7504,7 +7501,7 @@ Analytics.prototype.trackLink = function (links, event, properties) {
     on(el, 'click', function (e) {
       var ev = is.fn(event) ? event(el) : event;
       var props = is.fn(properties) ? properties(el) : properties;
-      var href = el.getAttribute('href') 
+      var href = el.getAttribute('href')
         || el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')
         || el.getAttribute('xlink:href');
 
@@ -10112,7 +10109,7 @@ module.exports = function uuid(a){
 5: [function(require, module, exports) {
 module.exports = {
   "name": "analytics",
-  "version": "2.6.6",
+  "version": "2.6.10",
   "main": "analytics.js",
   "dependencies": {},
   "devDependencies": {}

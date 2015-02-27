@@ -1,4 +1,25 @@
 
+2.6.10 / 2015-02-25
+===================
+
+  * Updating analytics.js-integrations
+
+2.6.9 / 2015-02-25
+==================
+
+  * Updating analytics.js-integrations
+
+2.6.8 / 2015-02-25
+==================
+
+  * Updating analytics.js-integrations
+
+2.6.7 / 2015-02-24
+==================
+
+  * Updating analytics.js-integrations
+  * removed duplicate .on('initialize') from analytics constructor
+
 2.6.6 / 2015-02-23
 ==================
 
